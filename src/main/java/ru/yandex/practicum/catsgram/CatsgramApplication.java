@@ -5,8 +5,7 @@ import com.google.gson.JsonSyntaxException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 @SpringBootApplication
 public class CatsgramApplication {
