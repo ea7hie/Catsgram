@@ -63,9 +63,7 @@ public class UserService {
     }
 
     public Optional<User> findUserById(long idForSearch) {
-        return users.values().stream()
-                .filter(user -> user.getId() == idForSearch)
-                .findFirst();
+        return (users.containsKey(idForSearch) ? Optional.of(users.get(idForSearch)) : Optional.empty());
     }
 
     private long getNextId() {

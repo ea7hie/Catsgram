@@ -9,6 +9,7 @@ import java.time.Instant;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 // Указываем, что класс PostService - является бином и его
 // нужно добавить в контекст приложения
@@ -62,5 +63,9 @@ public class PostService {
                 .max()
                 .orElse(0);
         return ++currentMaxId;
+    }
+
+    public Optional<Post> findPostById(long postId) {
+        return (posts.containsKey(postId) ? Optional.of(posts.get(postId)) : Optional.empty());
     }
 }
