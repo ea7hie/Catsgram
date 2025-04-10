@@ -1,7 +1,6 @@
 package ru.yandex.practicum.catsgram.service;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
@@ -30,7 +29,7 @@ public class ImageService {
     private final Map<Long, Image> images = new HashMap<>();
 
     // директория для хранения изображений
-    @Value("${catsgram.image-directory}")
+    // @Value("${catsgram.image-directory}")
     private String imageDirectory;
 
     // сохранение списка изображений, связанных с указанным постом

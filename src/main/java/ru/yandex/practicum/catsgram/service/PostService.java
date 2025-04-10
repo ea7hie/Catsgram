@@ -22,19 +22,8 @@ public class PostService {
     }
 
     public Collection<Post> findAll(int from, int size, String sort) {
-        if (from < 0 || size < 0) {
-            log.error("from или size < 0");
-            throw new ConditionsNotMetException("Элемент не может быть отрицательным");
-        }
-
         if (from > posts.size()) {
-            log.error("from is too large");
             throw new ConditionsNotMetException("В вашей ленте пок что нет такого количества постов");
-        }
-
-        if (!(sort.equals("asc") || sort.equals("desc"))) {
-            log.error("sort is not asc or desc; sort is {}", sort);
-            throw new ConditionsNotMetException("Неверный формат сортировки");
         }
 
         List<Post> list;
